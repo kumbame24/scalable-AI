@@ -1,12 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Bell, Search, Clock } from 'lucide-react';
+import { Bell, Search, Clock, LogOut, LogIn, UserPlus } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 
 export default function Header() {
-    const { user } = useAuth();
+    const { user, logout } = useAuth();
     const [activeExam, setActiveExam] = useState(null);
     const [timeLeft, setTimeLeft] = useState("");
+
+    const handleLogout = () => {
+        if (window.confirm("Are you sure you want to log out?")) {
+            logout();
+        }
+    };
 
     // Fetch active examination
     useEffect(() => {
@@ -82,6 +88,20 @@ export default function Header() {
             </div>
 
             <div className="header-right">
+                <div className="header-actions-group">
+                    <Link to="/login" title="Switch User" className="icon-btn-auth">
+                        <LogIn size={18} />
+                    </Link>
+                    <Link to="/register" title="Register New" className="icon-btn-auth">
+                        <UserPlus size={18} />
+                    </Link>
+                    <button onClick={handleLogout} title="Sign Out" className="icon-btn-auth logout-accent">
+                        <LogOut size={18} />
+                    </button>
+                </div>
+
+                <div className="v-divider"></div>
+
                 <button className="icon-btn">
                     <Bell size={20} />
                     <span className="notification-dot"></span>
