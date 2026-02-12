@@ -88,26 +88,28 @@ export default function Header() {
             </div>
 
             <div className="header-right">
-                <div className="header-auth-buttons">
-                    <Link to="/login" className="btn-auth-premium secondary">
-                        <LogIn size={16} />
-                        <span>Login</span>
-                    </Link>
-                    <Link to="/register" className="btn-auth-premium primary">
-                        <UserPlus size={16} />
-                        <span>Sign Up</span>
-                    </Link>
-                    <button onClick={handleLogout} className="btn-auth-premium ghost logout-btn">
-                        <LogOut size={16} />
+                <div className="header-actions-group">
+                    <div className="header-auth-buttons">
+                        <Link to="/login" className="btn-auth-premium secondary">
+                            <LogIn size={16} />
+                            <span>Login</span>
+                        </Link>
+                        <Link to="/register" className="btn-auth-premium primary">
+                            <UserPlus size={16} />
+                            <span>Sign Up</span>
+                        </Link>
+                        <button onClick={handleLogout} className="btn-auth-premium ghost logout-btn" title="Sign Out">
+                            <LogOut size={16} />
+                        </button>
+                    </div>
+
+                    <div className="v-divider"></div>
+
+                    <button className="icon-btn" title="Notifications">
+                        <Bell size={20} />
+                        <span className="notification-dot"></span>
                     </button>
                 </div>
-
-                <div className="v-divider"></div>
-
-                <button className="icon-btn" title="Notifications">
-                    <Bell size={20} />
-                    <span className="notification-dot"></span>
-                </button>
                 <Link to="/profile" className="user-profile-link">
                     <div className="user-profile">
                         <div className="user-info">
