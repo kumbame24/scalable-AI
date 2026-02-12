@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+sqlalchemy
+pydantic
+requests
+python-multipart
+opencv-python
+ultralytics
+numpy
+mediapipe
+passlib[bcrypt]
+python-jose[cryptography]
+python-dotenv
