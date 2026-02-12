@@ -122,6 +122,28 @@ export default function Header() {
                     </div>
                 </Link>
             </div>
+            <style>{`
+                .header-actions-group {
+                    display: flex;
+                    align-items: center;
+                    gap: 16px;
+                }
+                .header-auth-buttons {
+                    display: flex;
+                    align-items: center;
+                    gap: 12px;
+                }
+                .btn-auth-premium span {
+                    white-space: nowrap;
+                    font-size: 13px;
+                }
+                .v-divider {
+                    width: 1px;
+                    height: 24px;
+                    background: #e2e8f0;
+                    margin: 0 4px;
+                }
+            `}</style>
         </header>
     );
 }
