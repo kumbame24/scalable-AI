@@ -88,21 +88,23 @@ export default function Header() {
             </div>
 
             <div className="header-right">
-                <div className="header-actions-group">
-                    <Link to="/login" title="Switch User" className="icon-btn-auth">
-                        <LogIn size={18} />
+                <div className="header-auth-buttons">
+                    <Link to="/login" className="btn-auth-premium secondary">
+                        <LogIn size={16} />
+                        <span>Login</span>
                     </Link>
-                    <Link to="/register" title="Register New" className="icon-btn-auth">
-                        <UserPlus size={18} />
+                    <Link to="/register" className="btn-auth-premium primary">
+                        <UserPlus size={16} />
+                        <span>Sign Up</span>
                     </Link>
-                    <button onClick={handleLogout} title="Sign Out" className="icon-btn-auth logout-accent">
-                        <LogOut size={18} />
+                    <button onClick={handleLogout} className="btn-auth-premium ghost logout-btn">
+                        <LogOut size={16} />
                     </button>
                 </div>
 
                 <div className="v-divider"></div>
 
-                <button className="icon-btn">
+                <button className="icon-btn" title="Notifications">
                     <Bell size={20} />
                     <span className="notification-dot"></span>
                 </button>
